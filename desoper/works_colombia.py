@@ -153,8 +153,3 @@ def all_works(base_url):
 
 
 
-if __name__ == '__main__':
-    r'''
-    Hello main
-    '''
-    hello()
