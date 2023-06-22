@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 r'''
-Hello module
+prueba module
 '''
 
 
