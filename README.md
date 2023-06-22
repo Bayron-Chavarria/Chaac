@@ -8,13 +8,7 @@ The related software just print `Hello World!`. To avoid conflicts with the pack
 ## Install
 ```bash
 $ pip install -i https://test.pypi.org/simple/ desoper
-```
-## USAGE
-```python
->>> from desoper import hello
->>> hello.hello()
-Hello World!
-```
+
 Links:
 * [Test pip page](https://test.pypi.org/project/desoper/)
 * Flake8 Tool For Style Guide Enforcement
