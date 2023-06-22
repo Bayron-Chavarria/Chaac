@@ -1,13 +1,19 @@
-# Template for GitHub actions for DevOps
+# Trabajos publicados por editoriales Colombianas
 
 ![Python package](https://github.com/restrepo/DevOps/workflows/Python%20package/badge.svg)
 ![Upload Python Package](https://github.com/restrepo/DevOps/workflows/Upload%20Python%20Package/badge.svg)
 
-The related software just print `Hello World!`. To avoid conflicts with the package name, we use the Spanish translation _DesOper_
-
+Este paquete extrae todos los trabajos (ya sea por autores colombianos o no) que han publicado las editoriales colombianas, cuya búsqueda se realizó a la API de OpenaAlex, uno de los principales proyectos de OurResearch,  el cual es un catálogo abierto y completo de artículos académicos, autores, instituciones, editoriales, etc.
 ## Install
 ```bash
 $ pip install -i https://test.pypi.org/simple/ desoper
+```
+## Usage
+
+```bash
+>>> from desoper import works_colombia
+
+```
 
 Links:
 * [Test pip page](https://test.pypi.org/project/desoper/)
