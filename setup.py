@@ -34,7 +34,7 @@ if os.name in ('nt', 'dos'):
 def main():
     setup(
         # Application name:
-        name="prueba",
+        name="probar123",
 
         # Version number (initial):
         version="0.0.1",
