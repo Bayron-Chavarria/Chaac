@@ -34,7 +34,7 @@ if os.name in ('nt', 'dos'):
 def main():
     setup(
         # Application name:
-        name="works_colombia",
+        name="DevOps-works",
 
         # Version number (initial):
         version="0.0.2",
