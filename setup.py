@@ -37,7 +37,7 @@ def main():
         name="probar123",
 
         # Version number (initial):
-        version="0.0.1",
+        version="0.0.2",
 
         # Application author details:
         author="Bayron",
@@ -54,7 +54,7 @@ def main():
 
         license="BSD",
 
-        description="Hello World!",
+        description='Trabajos publicados por editoriales colombianas extraidas de la base de datos OpenAlex',
 
         long_description=open("README.md").read(),
 
@@ -62,7 +62,7 @@ def main():
 
         # Dependent packages (distributions)
         # See: https://github.com/pypa/pipenv/issues/2171
-        # install_requires=[],
+        install_requires=['requests', 'pandas','json','time'],
     )
 
 
