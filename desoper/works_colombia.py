@@ -150,6 +150,7 @@ def all_works(base_url):
     time.sleep(0.1)
   return df
 
+data = all_works("ttps://api.openalex.org/publishers?filter=country_codes:CO")
 
 
 
