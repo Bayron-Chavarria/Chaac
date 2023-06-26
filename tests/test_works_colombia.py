@@ -1,4 +1,7 @@
 import unittest
+import time
+import json
+import requests
 from desoper import works_colombia
 
 
