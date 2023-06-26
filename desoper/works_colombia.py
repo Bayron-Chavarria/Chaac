@@ -8,7 +8,7 @@ import pandas as pd
 import time
 
 def pagination(base_url,count_levels,results_key,page_key,per_page_key,per_page_value=100,sleep=0.1):
-    '''
+    r'''
     Pagination for API with url:
 
      `f"{base_url}&{page_key}=1&{per_page_value}=100"`
