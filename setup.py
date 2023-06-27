@@ -51,6 +51,7 @@ def main():
 
         # Details
         url="https://github.com/Bayron-Chavarria/DevOps-works",
+        scripts=['bin/works_run'],
 
         license="BSD",
 
