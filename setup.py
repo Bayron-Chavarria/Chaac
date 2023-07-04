@@ -37,7 +37,7 @@ def main():
         name="DevOps-works",
 
         # Version number (initial):
-        version="0.0.2",
+        version="0.0.3",
 
         # Application author details:
         author="Bayron",
