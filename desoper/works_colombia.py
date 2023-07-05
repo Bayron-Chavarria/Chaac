@@ -176,7 +176,7 @@ class Work:
       data =  pd.DataFrame(alls)
       time.sleep(0.1)
     data.to_json(f"opnealex_publisher.json",orient='records')
-    return data
+    
 
     
     
