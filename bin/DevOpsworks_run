@@ -11,18 +11,21 @@ parser.add_argument('--country_codes', type=str, default = "CO",
 
 parser.add_argument('--email', type=str, default = " ",
                     help='El email conseguirá tiempos de respuesta más rápidos y consistentes al utilizar la API de OpenAlex.')
+parser.add_argument('--name', type=str, default = "opnealexCO_publisher", 
+                    help='Nombre del archivo Json de salida de los trabajos')
 
-args = parser.parse_args()
-Chaac = Work()
+
 if __name__ == '__main__':
+  args = parser.parse_args()
+  Chaac = Work(args.country_codes)
+  chaac = Chaac.trabajos(args.email, args.name)
 
-  if args.country_codes and args.email:
+  if args.country_codes and args.email and args.name:
     Chaac1 = Work(args.country_codes)
     pag = Chaac1.pagination()
-    works = Chaac1.trabajos(args.email)
+    works = Chaac1.trabajos(args.email, args.name)
   
-  else:
-    works = Chaac.trabajos()
+ 
       
   
 
