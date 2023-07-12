@@ -13,14 +13,18 @@ parser.add_argument('--email', type=str, default = " ",
                     help='El email conseguirá tiempos de respuesta más rápidos y consistentes al utilizar la API de OpenAlex.')
 
 args = parser.parse_args()
-
+Chaac = Work()
 if __name__ == '__main__':
-  if args.country_codes:
-    pag = Work.pagination(args.country_codes)
-    works = Work.trabajos(args.email)
+
+  if args.country_codes and args.email:
+    Chaac1 = Work(args.country_codes)
+    pag = Chaac1.pagination()
+    works = Chaac1.trabajos(args.email)
+  
+  else:
+    works = Chaac.trabajos()
       
-  if args.email:
-    works = Work.trabajos(args.email)
+  
 
     
    
