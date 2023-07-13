@@ -1,0 +1,31 @@
+#!/usr/bin/env python3
+
+import argparse
+from chaac.Chaac import Chaac
+
+parser = argparse.ArgumentParser(
+    description='Trabajos para editoriales tomadas de la API de OpenAlex')
+parser.add_argument('--country_codes', type=str, default = "CO", 
+                    help='Codigo del país ISO 3166-1 alfa-2 (código de 2 letras)')
+parser.add_argument('--email', type=str, default = " ",
+                    help='El email conseguirá tiempos de respuesta más rápidos y consistentes al utilizar la API de OpenAlex.')
+parser.add_argument('--name', type=str, default = "opnealexCO_publisher", 
+                    help='Nombre del archivo Json de salida de los trabajos')
+
+
+if __name__ == '__main__':
+  args = parser.parse_args()
+  chaac = Chaac(args.country_codes)
+  chaac = Chaac.Works(args.email, args.name)
+
+  if args.country_codes and args.email and args.name:
+    chaac1 = Chaac(args.country_codes)
+    pag = chaac1.pagination()
+    works = chaac1.Works(args.email, args.name)
+
+ 
+      
+  
+
+    
+   
