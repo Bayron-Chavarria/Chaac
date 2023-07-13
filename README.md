@@ -1,17 +1,16 @@
-# Trabajos publicados por editoriales Colombianas
+# Chaac 
+Dios Maya del agua y sobre todo de la lluvia
 
-![Python package](https://github.com/restrepo/DevOps/workflows/Python%20package/badge.svg)
-![Upload Python Package](https://github.com/restrepo/DevOps/workflows/Upload%20Python%20Package/badge.svg)
-
-Este paquete extrae todos los trabajos (ya sea por autores colombianos o no) que han publicado las editoriales colombianas, cuya búsqueda se realizó a la API de OpenaAlex, uno de los principales proyectos de OurResearch,  el cual es un catálogo abierto y completo de artículos académicos, autores, instituciones, editoriales, etc.
+# Descripción
+Este paquete extrae todos los trabajos que han publicado las editoriales de cualquier país, cuya búsqueda se realizó en la API de OpenaAlex, uno de los principales proyectos de OurResearch,  el cual es un catálogo abierto y completo de artículos académicos, autores, instituciones, editoriales, etc.
 ## Install
 ```bash
-$ pip install -i https://test.pypi.org/simple/ desoper
+$ pip install -i https://test.pypi.org/simple/ chaac
 ```
 ## Usage
 
 ```bash
->>> from desoper import works_colombia
+>>> chaac_run --country_codes "AL"
 
 ```
 
