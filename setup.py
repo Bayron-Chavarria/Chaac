@@ -37,7 +37,7 @@ def main():
         name="Chaac",
 
         # Version number (initial):
-        version="0.0.5",
+        version="0.0.3",
 
         # Application author details:
         author="Bayron",
