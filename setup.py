@@ -34,10 +34,10 @@ if os.name in ('nt', 'dos'):
 def main():
     setup(
         # Application name:
-        name="DevOps-works",
+        name="Chaac",
 
         # Version number (initial):
-        version="0.0.3",
+        version="0.0.4",
 
         # Application author details:
         author="Bayron",
@@ -50,12 +50,12 @@ def main():
         include_package_data=True,
 
         # Details
-        url="https://github.com/Bayron-Chavarria/DevOps-works",
-        scripts=['bin/DevOpsworks_run'],
+        url="https://github.com/Bayron-Chavarria/Chaac",
+        scripts=['bin/chaac_run'],
 
         license="BSD",
 
-        description='Trabajos publicados por editoriales colombianas extraidas de la base de datos OpenAlex',
+        description='Trabajos publicados por editoriales extraidas de la base de datos OpenAlex',
 
         long_description=open("README.md").read(),
 
