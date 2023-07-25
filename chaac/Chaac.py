@@ -57,33 +57,32 @@ class Chaac:
          data = response.json()
          if data["meta"]["count"] != 0:
             print("Hay información dadas para el endpoint dado.")
-            page = 1
-            r = []
-            j = requests.get(
-               f'{self.base_url}&{self.page_key}={page}&{self.per_page_key}={self.per_page_value}')
-            if j.status_code == 200:
-               count = j.json()
-               for l in set([d.get('level') for d in self.count_levels]):
-                     count = count.get(
-                        [d.get('to_count_key')for d in self.count_levels if d.get('level') == l][0]
-                     )
-            if isinstance(count, int) and count:
-               r = r + j.json().get(self.results_key)  # Primera pagina
-               npages = count // self.per_page_value
-               if count % self.per_page_value:
-                     npages += 1
-               for page in range(2, npages + 1):
-                     print(page, end='\r')
-                     url = f'{self.base_url}&{self.page_key}={page}&{self.per_page_key}={self.per_page_value}'
-                     j = requests.get(url)
-                     time.sleep(self.sleep)  # Para evitar sobrecargar la API
-                     if j.status_code == 200:
-                        r = r + j.json().get(self.results_key)  # Primera pagina
-            return r
          else:
             print("No hay información dada para el endpoint dado. Ingresa otro codigo ISO3166-2")
-            return None
-      return None
+      page = 1
+      r = []
+      j = requests.get(
+         f'{self.base_url}&{self.page_key}={page}&{self.per_page_key}={self.per_page_value}')
+      if j.status_code == 200:
+         count = j.json()
+         for l in set([d.get('level') for d in self.count_levels]):
+               count = count.get(
+                  [d.get('to_count_key')for d in self.count_levels if d.get('level') == l][0]
+               )
+      if isinstance(count, int) and count:
+         r = r + j.json().get(self.results_key)  # Primera pagina
+         npages = count // self.per_page_value
+         if count % self.per_page_value:
+               npages += 1
+         for page in range(2, npages + 1):
+               print(page, end='\r')
+               url = f'{self.base_url}&{self.page_key}={page}&{self.per_page_key}={self.per_page_value}'
+               j = requests.get(url)
+               time.sleep(self.sleep)  # Para evitar sobrecargar la API
+               if j.status_code == 200:
+                  r = r + j.json().get(self.results_key)  # Primera pagina
+      return r
+         
 
    def get_publisher_ids(self):
       """
@@ -92,8 +91,7 @@ class Chaac:
       ----------
       Ninguno
       """
-      pagination = self.pagination()
-      df = pd.DataFrame(pagination)
+      df = pd.DataFrame(self.pagination())
       df = df.loc[:, ["id", "display_name",
                         "works_count", "sources_api_url"]]
       publisher = []
@@ -135,8 +133,7 @@ class Chaac:
       """
 
       alls = []
-      get_publisher_id = self.get_publisher_ids()
-      for i in get_publisher_id:
+      for i in self.get_publisher_ids():
          print(i)
          endpoint = "works"
          filters = ",".join((
