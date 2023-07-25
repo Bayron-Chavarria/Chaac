@@ -10,7 +10,7 @@ parser.add_argument('--country_codes', type=str, default = "CO",
 parser.add_argument('--email', type=str, default = " ",
                     help='El email conseguirá tiempos de respuesta más rápidos y consistentes al utilizar la API de OpenAlex.')
 parser.add_argument('--name', type=str, default = "opnealexCO_publisher", 
-                    help='Nombre del archivo Json de salida de los trabajos')
+                    help='Nombre del archivo Json de salida de los trabajos.')
 
 
 if __name__ == '__main__':

@@ -97,7 +97,7 @@ class Chaac:
       df = df.loc[:, ["id", "display_name",
                         "works_count", "sources_api_url"]]
       publisher = []
-      for index,row in df.iterrows():
+      for index, row in df.iterrows():
          publisher.append(row["id"])
       pub = [element.rsplit("/", 1)[-1] for element in publisher]
       return pub
