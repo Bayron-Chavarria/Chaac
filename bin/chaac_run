@@ -16,12 +16,14 @@ parser.add_argument('--name', type=str, default = "opnealexCO_publisher",
 if __name__ == '__main__':
   args = parser.parse_args()
   chaac = Chaac(args.country_codes)
-  chaac = Chaac.Works(args.email, args.name)
+  chaac.Works(args.email, args.name)
 
-  if args.country_codes and args.email and args.name:
-    chaac1 = Chaac(args.country_codes)
-    pag = chaac1.pagination()
-    works = chaac1.Works(args.email, args.name)
+  if args.country_codes:
+    chaac2 = Chaac(args.country_codes)
+    if args.email or args.name:
+      chaac2.Works(args.email, args.name)
+    else:
+      chaac2.Works(args.email, args.name)
 
  
       
