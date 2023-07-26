@@ -16,6 +16,7 @@ parser.add_argument('--name', type=str, default = "opnealexCO_publisher",
 if __name__ == '__main__':
   args = parser.parse_args()
   chaac = Chaac(args.country_codes)
+  chaac.Works(args.email, args.name)
 
 
  
