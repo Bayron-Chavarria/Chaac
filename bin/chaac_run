@@ -17,17 +17,4 @@ if __name__ == '__main__':
   args = parser.parse_args()
   chaac = Chaac(args.country_codes)
   chaac.Works(args.email, args.name)
-
-  if args.country_codes is not None:
-    chaac1 = Chaac(args.country_codes)
   
-  if args.email is not None or args.name is not None:
-    chaac1.Works(args.email, args.name)
-
-
- 
-      
-  
-
-    
-   
