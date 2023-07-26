@@ -56,13 +56,13 @@ class Chaac:
       if response.status_code == 200:
          data = response.json()
          if data["meta"]["count"] != 0:
-            print("Hay información dadas para el endpoint dado.")
+            print("Hay información para el el codigo de país recibido.")
          else:
             print("No hay información dada para el endpoint dado. Ingresa otro codigo ISO3166-2")
       page = 1
       r = []
       j = requests.get(
-         f'{self.base_url}&{self.page_key}={page}&{self.per_page_key}={self.per_page_value}')
+         f'{self.base_url}&{self.page_key}={page}&{self.per_page_key}=100')
       if j.status_code == 200:
          count = j.json()
          for l in set([d.get('level') for d in self.count_levels]):
@@ -71,12 +71,12 @@ class Chaac:
                )
       if isinstance(count, int) and count:
          r = r + j.json().get(self.results_key)  # Primera pagina
-         npages = count // self.per_page_value
-         if count % self.per_page_value:
+         npages = count // 100
+         if count % 100:
                npages += 1
          for page in range(2, npages + 1):
                print(page, end='\r')
-               url = f'{self.base_url}&{self.page_key}={page}&{self.per_page_key}={self.per_page_value}'
+               url = f'{self.base_url}&{self.page_key}={page}&{self.per_page_key}=100'
                j = requests.get(url)
                time.sleep(self.sleep)  # Para evitar sobrecargar la API
                if j.status_code == 200:
@@ -133,7 +133,8 @@ class Chaac:
       """
 
       alls = []
-      for i in self.get_publisher_ids():
+      get_publisher_id = self.get_publisher_ids()
+      for i in get_publisher_id:
          print(i)
          endpoint = "works"
          filters = ",".join((
