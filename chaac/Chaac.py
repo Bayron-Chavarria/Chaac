@@ -6,9 +6,7 @@ import pandas as pd
 class Chaac:
    def __init__(
          self,
-         per_page_value=100,
-         sleep=0.1,
-         country_codes: str = "CO"):
+         country_codes):
       """
       Constructor para obtener los trabajos publicados por publishers 
          de la base de datos de OpenAlex.
@@ -20,14 +18,14 @@ class Chaac:
          country_codes: str="CO"
             Codigo del país ISO 3166-1 alfa-2 (código de 2 letras)
       """
+      self.country_codes = country_codes
       self.base_url = f"https://api.openalex.org/publishers?filter=country_codes:{country_codes}"
       self.count_levels = [{'level': 0, 'to_count_key': 'meta'}, {
          'level': 1, 'to_count_key': 'count'}]
       self.results_key = f'results'
       self.page_key = f"page"
       self.per_page_key = f"per_page"
-      self.per_page_value = per_page_value
-      self.sleep = sleep
+      self.sleep = 0.1
 
    def pagination(self):
       """ 
