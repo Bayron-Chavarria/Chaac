@@ -1,7 +1,7 @@
 # Chaac 
 Maya god of water and especially of rain.
 
-# Descripción
+# Description
 This package extracts all the works published by publishers from any country, searched through the OpenAlex API, one of the main projects of OurResearch, which is an open and comprehensive catalog of academic articles, authors, institutions, publishers, etc.
 ## Install
 ```bash
