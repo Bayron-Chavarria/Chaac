@@ -4,16 +4,15 @@ import argparse
 from chaac.Chaac import Chaac
 
 parser = argparse.ArgumentParser(
-    description='Trabajos para editoriales tomadas de la API de OpenAlex')
+    description='Works for publishers taken from the OpenAlex API.')
 parser.add_argument('--country_codes', type=str, default = "CO", 
-                    help='Codigo del país ISO 3166-1 alfa-2 (código de 2 letras)')
+                    help='ISO 3166-1 alfa-2 country code(2- letter code) of the country')
 parser.add_argument('--email', type=str, default = " ",
-                    help='El email conseguirá tiempos de respuesta más rápidos y consistentes al utilizar la API de OpenAlex.')
-parser.add_argument('--name', type=str, default = "opnealexCO_publisher", 
-                    help='Nombre del archivo Json de salida de los trabajos.')
+                    help='The email will provide faster and more consistent response times when using the OpenAlex API.')
+parser.add_argument('--output', type=str, default = "opnealexCO_publisher", 
+                    help='Name of the JSON output file for the works')
 
 args = parser.parse_args()
 if __name__ == '__main__':
   chaac = Chaac(args.country_codes)
-  chaac.Works(args.email, args.name)
-  
+  chaac.Works(args.email, args.output)
