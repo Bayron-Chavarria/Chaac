@@ -37,7 +37,7 @@ def main():
         name="Chaac",
 
         # Version number (initial):
-        version="0.0.11",
+        version="0.0.12",
 
         # Application author details:
         author="Bayron",
@@ -55,7 +55,7 @@ def main():
 
         license="BSD",
 
-        description='Trabajos publicados por editoriales extraidas de la base de datos OpenAlex',
+        description='Works for publishers taken from the OpenAlex API.',
 
         long_description=open("README.md").read(),
 
@@ -63,7 +63,7 @@ def main():
 
         # Dependent packages (distributions)
         # See: https://github.com/pypa/pipenv/issues/2171
-        install_requires=['requests', 'numpy' ,'pandas'],
+        install_requires=['requests', 'numpy', 'pandas'],
     )
 
 
