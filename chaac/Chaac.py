@@ -179,7 +179,7 @@ class Chaac:
                                          'author_id': author_id,
                                          'author_name': author_name,
                                          'author_position': author_position,
-                                        })
+                                         })
 
                 data = pd.DataFrame(alls)
                 time.sleep(0.1)
