@@ -5,9 +5,7 @@ import pandas as pd
 
 
 class Chaac:
-    def __init__(
-            self,
-        country_codes):
+    def __init__(self, country_codes):
         """
         Constructor to obtain the published works by publishers
          from the OpenAlex database.
@@ -147,14 +145,14 @@ class Chaac:
                 cursor = '*'
 
                 select = ",".join(('id',
-                                    'display_name',
-                                    'publication_year',
-                                    'publication_date',
-                                    'primary_location',
-                                    'open_access',
-                                    'authorships',
-                                    'cited_by_count',
-                                    'updated_date',))
+                                   'display_name',
+                                   'publication_year',
+                                   'publication_date',
+                                   'primary_location',
+                                   'open_access',
+                                   'authorships',
+                                   'cited_by_count',
+                                   'updated_date',))
 
                 works = []
                 while cursor:
@@ -174,19 +172,19 @@ class Chaac:
                             author_name = author['display_name'] if author else None
                             author_position = authorship['author_position']
                             alls.append({'work_id': work['id'],
-                                        'work_display_name': work['display_name'],
-                                        'work_publication_year': work['publication_year'],
-                                        'work_publication_date': work['publication_date'],
-                                        "doi": doi,
-                                        "publisher": revista,
-                                        'author_id': author_id,
-                                        'author_name': author_name,
-                                        'author_position': author_position,
+                                         'work_display_name': work['display_name'],
+                                         'work_publication_year': work['publication_year'],
+                                         'work_publication_date': work['publication_date'],
+                                         "doi": doi,
+                                         "publisher": revista,
+                                         'author_id': author_id,
+                                         'author_name': author_name,
+                                         'author_position': author_position,
                                             })
 
                 data = pd.DataFrame(alls)
                 time.sleep(0.1)
             data.to_json(f"./{output}.json", orient='records')
         except Exception:
-            print("""There are no jobs in the OpenAlex database for this country code. 
+            print("""There are no jobs in the OpenAlex database for this country code.
             Please try another ISO 3166-1 alpha-2 code.""")
