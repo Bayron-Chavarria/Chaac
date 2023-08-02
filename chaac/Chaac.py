@@ -139,8 +139,7 @@ class Chaac:
             get_publisher_id = self.get_publisher_ids()
             for i in get_publisher_id:
                 print(i)
-                endpoint = "works"
-                filters = ",".join((
+                filter = ",".join((
                     f'primary_location.source.publisher_lineage:{i}',))
                 cursor = '*'
 
@@ -156,7 +155,7 @@ class Chaac:
 
                 works = []
                 while cursor:
-                    url = f'https://api.openalex.org/{endpoint}?filter={filters}&select={select}&cursor={cursor}&mailto={email}'
+                    url = f'https://api.openalex.org/works?filter={filter}&select={select}&cursor={cursor}&mailto={email}'
                     page_with_results = requests.get(url).json()
                     results = page_with_results['results']
                     works.extend(results)
@@ -180,7 +179,7 @@ class Chaac:
                                          'author_id': author_id,
                                          'author_name': author_name,
                                          'author_position': author_position,
-                                            })
+                                        })
 
                 data = pd.DataFrame(alls)
                 time.sleep(0.1)
