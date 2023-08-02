@@ -188,5 +188,5 @@ class Chaac:
                 time.sleep(0.1)
             data.to_json(f"./{output}.json", orient='records')
         except Exception:
-            print("There are no jobs in the OpenAlex database for this country code. 
-            Please try another ISO 3166-1 alpha-2 code.")
+            print("""There are no jobs in the OpenAlex database for this country code. 
+            Please try another ISO 3166-1 alpha-2 code.""")
