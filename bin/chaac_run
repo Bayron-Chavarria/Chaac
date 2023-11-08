@@ -9,7 +9,7 @@ parser.add_argument('--country_codes', type=str, default = "CO",
                     help='ISO 3166-1 alfa-2 country code(2- letter code) of the country')
 parser.add_argument('--email', type=str, default = " ",
                     help='The email will provide faster and more consistent response times when using the OpenAlex API.')
-parser.add_argument('--output', type=str, default = "opnealexCO_publisher", 
+parser.add_argument('--output', type=str, default = "openalexCO_publisher", 
                     help='Name of the JSON output file for the works')
 
 args = parser.parse_args()
